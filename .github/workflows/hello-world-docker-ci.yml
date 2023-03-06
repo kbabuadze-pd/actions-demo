@@ -2,8 +2,9 @@ name: Container Action
 
 on:
   push:
-    paths:
-      - "hello-world-docker-action/**"
+    branches:
+      - "main"
+    paths: [ "hello-world-docker-action/**" ]
   workflow_dispatch:
     
 
