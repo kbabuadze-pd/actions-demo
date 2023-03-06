@@ -12,7 +12,7 @@ on:
 
 jobs:
   Build:
-    name: Bild
+    name: Build
     runs-on: ubuntu-latest
     steps:
       - name: Outputu envs
