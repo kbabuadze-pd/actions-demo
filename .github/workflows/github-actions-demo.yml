@@ -1,0 +1,20 @@
+name: GitHub Actions Demo
+
+on:
+  push:
+    branches: [ main ]
+    paths-ignore: [.github/**]
+  pull_request:
+    branches: [ main ]
+  schedule:
+    - cron: '15 6 * * 0'
+  workflow_dispatch:
+
+jobs:
+  Build:
+    name: Run npm on Ubuntu
+    runs-on: ubuntu-latest
+    steps:
+      - name: Outputu envs
+        run: |
+          echo "${{ github.event.action }}"
