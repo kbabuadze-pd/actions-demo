@@ -1,0 +1,20 @@
+name: Container Action
+
+on:
+  push:
+    paths:
+      - "hello-world-docker-action"
+  workflow_dispatch:
+    
+
+jobs:
+  ContainerAction:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+
+      - name: Run container Action
+        uses: ./hello-world-docker-action
+        with:
+          who-to-greet: "kote"
