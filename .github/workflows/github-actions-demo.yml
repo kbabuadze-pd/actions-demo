@@ -18,3 +18,10 @@ jobs:
       - name: Outputu envs
         run: |
           echo "${{ github.event.action }}"
+          echo "${{ github.base_ref }}"
+        
+      - uses: actions/checkout@v3
+
+      - name: List file
+        run: |
+          tree
