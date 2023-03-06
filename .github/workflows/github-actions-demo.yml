@@ -12,7 +12,7 @@ on:
 
 jobs:
   Build:
-    name: Run npm on Ubuntu
+    name: Bild
     runs-on: ubuntu-latest
     steps:
       - name: Outputu envs
