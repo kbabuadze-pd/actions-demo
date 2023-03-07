@@ -1,5 +1,7 @@
 name: Reuse other workflow
 
+on:
+  workflow_dispatch:
 
 job:
   call-workflow:
