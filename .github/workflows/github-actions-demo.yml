@@ -46,8 +46,10 @@ jobs:
 
   Production:
     runs-on: ubuntu-latest
-    environment: Production
-    needs: ["Test","Load-test"]
+    environment:
+      name: Production
+      url: https://writeabout.net
     if: github.event.inputs.environment == 'Production'
+    needs: ["Test","Load-test"]
     steps:
       - run: echo "Load Testing"
