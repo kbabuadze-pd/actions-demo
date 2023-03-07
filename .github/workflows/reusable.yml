@@ -1,0 +1,13 @@
+name: Reusable workflow
+
+on:
+  workflow_dispatch:
+    inputs:
+      who-to-greet:
+        type: string
+
+jobs:
+  reusable-job:
+    runs-on: "ubuntu-latest"
+    steps:
+      - run: echo "Hello ${{ inputs.who-to-greet }}" 
