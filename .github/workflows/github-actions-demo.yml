@@ -36,17 +36,18 @@ jobs:
     environment: Test
     needs: Build
     steps:
-      run: echo "Testing"
+      - run: echo "Testing"
   Load-Test:
     runs-on: ubuntu-latest
     environment: Load-Test
     needs: Build
     steps:
-      run: echo "Load Testing"
+      - run: echo "Load Testing"
 
   Production:
     runs-on: ubuntu-latest
     environment: Production
     needs: ["Test","Load-test"]
+    if: github.event.inputs.environment == 'Production'
     steps:
-      run: echo "Load Testing"
+      - run: echo "Load Testing"
